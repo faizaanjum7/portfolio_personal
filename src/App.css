@@ -33,3 +33,49 @@ html,body,#root {
   opacity:.7;
   z-index:2;
 }
+
+.ocean.light {
+  background: #87ceeb;
+  transition: background 0.5s ease;
+}
+
+.ocean.dark {
+  background: #060913;
+  transition: background 0.5s ease;
+}
+
+.theme-toggle {
+  position:absolute;
+  top:20px;
+  right:40px;
+  background:none;
+  border:none;
+  z-index:10;
+  padding:0;
+}
+
+.theme-toggle img {
+  width:60px;
+  height:60px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle img.glow {
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.8)) dropshadow(0 0 30px rgba(255,255,255,0.4));
+}
+
+@keyframes hoverBounce {
+  0%,
+  100% {
+    transform:translateY(0) scale(1.1);
+  }
+
+  50% {
+    transform:translateY(-6px) scale(1.1);
+  }
+}
+
+.theme-toggle:hover img {
+  animation: hoverBounce 0.8s ease-in-out infinite;
+}
+
