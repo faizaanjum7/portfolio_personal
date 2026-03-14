@@ -4,6 +4,7 @@ import Wave from 'react-wavify'
 
 import morningStar from "./assets/morning-star.webp";
 import sleepingStar from "./assets/sleeping-star.webp";
+import me from "./assets/me.png";
 
 
 import daynightSound from "./assets/daynight.mp3";
@@ -30,6 +31,12 @@ function App() {
           className={isDarkMode ? 'glow' : ''}
         />
       </button>
+
+      <div className="content-wrapper">
+        <div className="profile-container">
+        <img src={me} alt="myimage" className="profile-img"/>
+      </div>
+      </div>
         
         <Wave
         className="wave wave1"
