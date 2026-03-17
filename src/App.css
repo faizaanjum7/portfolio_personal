@@ -53,6 +53,66 @@ html,body,#root {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
+.about-section {
+  position:relative;
+  max-width:500px;
+  color:white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow:2px 2px 2px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-section h1 {
+  font-size:3.5rem;
+  margin:0 0 15px 0;
+  font-weight:700;
+}
+
+.about-section p {
+  font-size:1.25rem;
+  line-height:1.6;
+  margin:0;
+  opacity:0.9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:0;
+    transfrom:translateX(20px);
+  }
+  to {
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+.floating-pearl {
+  position:absolute;
+  width:20px;
+  height:20px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 10px rgba(255,255,255,0.8));
+  animation: floatPearl 3s ease-in-out;
+}
+
+.pearl1 {
+  top:20px;
+  left:-40px;
+  animation-delay:0s;
+}
+
+.pearl2 {
+  top:80px;
+  right:-20px;
+  animation-delay:1s;
+}
+
+.pearl3 {
+  bottom:-10px;
+  left:-30px;
+  animation-delay:2s;
+}
+
 .theme-toggle {
   position:absolute;
   top:20px;

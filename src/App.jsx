@@ -5,6 +5,7 @@ import Wave from 'react-wavify'
 import morningStar from "./assets/morning-star.webp";
 import sleepingStar from "./assets/sleeping-star.webp";
 import me from "./assets/me.png";
+import pearl from "./assets/pearl.webp";
 
 
 import daynightSound from "./assets/daynight.mp3";
@@ -35,6 +36,14 @@ function App() {
       <div className="content-wrapper">
         <div className="profile-container">
         <img src={me} alt="myimage" className="profile-img"/>
+        </div>
+      <div className="about-section">
+        <img src={pearl} alt="pearl" className="floating-pearl pearl1"></img>
+        <img src={pearl} alt="pearl" className="floating-pearl pearl2"></img>
+        <img src={pearl} alt="pearl" className="floating-pearl pearl3"></img>
+
+        <h1>hi, i'm faiza!</h1>
+        <p>a final year computer science student, full stack intern, music lover ♬⋆.˚</p>
       </div>
       </div>
         
