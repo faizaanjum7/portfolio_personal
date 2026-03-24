@@ -6,6 +6,10 @@ import morningStar from "./assets/morning-star.webp";
 import sleepingStar from "./assets/sleeping-star.webp";
 import me from "./assets/me.png";
 import pearl from "./assets/pearl.webp";
+import shell2 from "./assets/shell2.webp";
+import starfish from "./assets/starfish.webp";
+import stars3 from "./assets/stars_3.webp";
+import crescentMoon from "./assets/crescent-moon.webp";
 
 
 import daynightSound from "./assets/daynight.mp3";
@@ -44,6 +48,24 @@ function App() {
 
         <h1>hi, i'm faiza!</h1>
         <p>a final year computer science student, full stack intern, music lover ♬⋆.˚</p>
+
+        <div className="nav-links">
+          <a href="#about" className="nav-link" onClick={(e) => openTab(e,'about')}>
+            <img src={shell2} alt="about" className="nav-icon" /> about
+          </a>
+
+          <a href="#interests" className="nav-link" onClick={(e) => openTab(e, 'interests')}>
+              <img src={starfish} alt="Interests" className="nav-icon" /> interests
+            </a>
+
+            <a href="#portfolio" className="nav-link" onClick={(e) => openTab(e, 'portfolio')}>
+              <img src={stars3} alt="Portfolio" className="nav-icon" /> portfolio
+            </a>
+
+            <a href="#contact" className="nav-link" onClick={(e) => openTab(e, 'contact')}>
+              <img src={crescentMoon} alt="Contact" className="nav-icon" /> contact
+            </a>
+        </div>
       </div>
       </div>
         
