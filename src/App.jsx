@@ -10,6 +10,9 @@ import shell2 from "./assets/shell2.webp";
 import starfish from "./assets/starfish.webp";
 import stars3 from "./assets/stars_3.webp";
 import crescentMoon from "./assets/crescent-moon.webp";
+import githubIcon from "./assets/github.png";
+import linkedinIcon from "./assets/linkedin.png";
+import emailIcon from "./assets/email.png";
 
 
 import daynightSound from "./assets/daynight.mp3";
@@ -68,7 +71,22 @@ function App() {
         </div>
       </div>
       </div>
-        
+
+      <footer className="footer">
+        <div className="footer-links">
+          <a href="https://github.com/faizaanjum7" target="_blank" rel="noopener noreferrer">
+            <img src={githubIcon} alt="GitHub" className="footer-icon" />
+          </a>
+           <a href="mailto:faizaanjumm07@gmail.com"onClick={() => window.open("https://mail.google.com/mail/?view=cm&to=faizaanjumm07@gmail.com", "_blank")}>
+            <img src={emailIcon} alt="Email" className="footer-icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/m-s-faiza-anjum-b7b251264/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedinIcon} alt="LinkedIn" className="footer-icon" />
+          </a>
+        </div>
+        <p className="footer-credits">© 2026 Faiza Anjum M S</p>
+      </footer>
+
         <Wave
         className="wave wave1"
         fill={isDarkMode ? "#1d2b45" : "#4fa3d1"}
