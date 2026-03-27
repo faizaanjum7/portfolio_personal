@@ -13,9 +13,10 @@ import crescentMoon from "./assets/crescent-moon.webp";
 import githubIcon from "./assets/github.png";
 import linkedinIcon from "./assets/linkedin.png";
 import emailIcon from "./assets/email.png";
-
+import faiza_anjum from "./assets/Faiza_Anjum.pdf";
 
 import daynightSound from "./assets/daynight.mp3";
+import resume_pop from "./assets/resume_pop.mp3";
 
 function App() {
   const [isDarkMode, setIsDarkMode]=useState(false);
@@ -28,6 +29,10 @@ function App() {
   const toggleTheme = () => {
     playSound(daynightSound);
     setIsDarkMode(prev => !prev);
+  }
+
+  const handleResumeClick = () => {
+    playSound(resume_pop);
   }
   return (
     <div className={`ocean ${isDarkMode ? 'dark': 'light'}`}>
@@ -86,6 +91,9 @@ function App() {
         </div>
         <p className="footer-credits">© 2026 Faiza Anjum M S</p>
       </footer>
+
+      <a href={faiza_anjum} target="_blank" rel="noopener noreferrer" className="resume-bubble" onClick={handleResumeClick}><span>resume</span></a>
+      
 
         <Wave
         className="wave wave1"
