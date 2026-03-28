@@ -322,6 +322,299 @@ html,body,#root {
     }
 }
 
+.floating-window {
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 350px;
+    border-radius: 12px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform-origin: center right;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.floating-window.closing {
+    animation: popOut 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+.light-window {
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+}
+
+.dark-window {
+    background: rgba(20, 25, 40, 0.85);
+    color: #fff;
+}
+
+/* browser header */
+.window-header {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-window .window-header {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light-window .window-header {
+    background: rgba(240, 240, 240, 0.9);
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: url('/starfish_2.png') 16 16, pointer;
+}
+
+.close {
+    background-color: #ff5f56;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #27c93f;
+}
+
+.close:hover {
+    filter: brightness(1.2);
+}
+
+.window-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.85rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* window Content */
+.window-body {
+    padding: 25px;
+    flex: 1;
+    overflow-y: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.window-body h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px dashed rgba(150, 150, 150, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.dark-window .window-body h2 {
+    color: #aee2ff;
+}
+
+.light-window .window-body h2 {
+    color: #2e8bc0;
+}
+
+.window-body p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes popOut {
+    0% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.85);
+    }
+}
+
+
+.what-i-do-list,
+.interest-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.what-i-do-list li,
+.interest-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.what-i-do-list li::before,
+.interest-list li::before {
+    content: '🌊';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9rem;
+}
+
+.interest-list li:nth-child(1)::before {
+    content: '🎵';
+}
+
+.interest-list li:nth-child(2)::before {
+    content: '🌙';
+}
+
+.interest-list li:nth-child(3)::before {
+    content: '⭐';
+}
+
+.interest-list li:nth-child(4)::before {
+    content: '🍳';
+}
+
+.interest-list li:nth-child(5)::before {
+    content: '✨';
+}
+
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-window .timeline::before {
+    background: rgba(174, 226, 255, 0.4);
+}
+
+.light-window .timeline::before {
+    background: rgba(46, 139, 192, 0.4);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.timeline-date {
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.timeline-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.timeline-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+    /*white color in dark mode */
+    filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+.icon-img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.light-window .icon-img {
+    filter: brightness(0) invert(0.2) sepia(0.5) hue-rotate(190deg) drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+    opacity: 0.8;
+}
+
+.light-window .icon-img:hover {
+    opacity: 1;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
 .wave {
   position:absolute;
   bottom:0;
