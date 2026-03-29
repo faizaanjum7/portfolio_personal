@@ -357,6 +357,7 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.15);
   color: white;
+  cursor: pointer;
 }
 
 @keyframes floatBubble {
@@ -449,6 +450,7 @@ body,
   width: 12px;
   height: 12px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .close {
@@ -670,6 +672,7 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery-image:hover {
@@ -713,6 +716,7 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 15px;
+  cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -815,6 +819,7 @@ body,
   font-weight: 500;
   padding: 0;
   margin-bottom: 10px;
+  cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.2s, transform 0.2s;
   display: inline-flex;
@@ -868,6 +873,7 @@ body,
   font-weight: 500;
   font-size: 0.9rem;
   transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
 }
 
 .light-window .project-links a {
