@@ -26,12 +26,12 @@ import linksSound from "./assets/links.wav";
 import closeSound from "./assets/links_close.wav";
 
 function App() {
-  const [isDarkMode, setIsDarkMode]=useState(false);
-  const [activeTab, setActiveTab]=useState(null);
-  const [isClosing, setIsClosing]=useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [activeTab, setActiveTab] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
 
   const playSound = (sound) => {
-    const audio=new Audio(sound);
+    const audio = new Audio(sound);
     audio.play().catch(console.error);
   }
 
@@ -53,7 +53,7 @@ function App() {
   const closeTab = () => {
     playSound(closeSound);
     setIsClosing(true);
-    setTimeout(()=> {
+    setTimeout(() => {
       setActiveTab(null);
       setIsClosing(false);
     }, 300);
@@ -63,8 +63,92 @@ function App() {
     playSound(linksSound);
   }
 
+  const projectsData = [
+    {
+      id: 'personal-portfolio',
+      title: 'personal portfolio',
+      status: '',
+      description: 'an underwater-themed interactive portfolio with smooth animations, sound effects, and a playful ui. built to explore how design and code can create immersive web experiences.',
+      tech: 'react • css • animations',
+      github: 'https://github.com/faizaanjum7/portfolio_personal',
+      live: 'https://faiza-anjum-portfolio.vercel.app/'
+    },
+    {
+      id: 'shms',
+      title: 'smart hospital management system',
+      status: 'in progress',
+      description: 'a full-stack hospital management system built as a team project, focused on managing patients, appointments, and hospital workflows efficiently. led a 3-member team and contributed to frontend and system design.',
+      tech: 'react • node • firebase',
+      github: 'https://github.com/faizaanjum7/SHMS',
+      live: 'https://shms-latest-app.vercel.app/'
+    },
+    {
+      id: 'next-gen-lms',
+      title: 'next-gen lms portal',
+      status: 'in progress',
+      description: 'a modern learning management system designed in figma and developed into a functional web app. focused on clean ui, structured learning flows, and real-world usability.',
+      tech: 'react • figma • ai tools',
+      github: 'https://github.com/faizaanjum7/Next-Gen-LMS',
+      live: 'https://next-gen-lms-app.vercel.app/'
+    },
+    {
+      id: 'tedxgprec-2025',
+      title: 'tedxgprec 2025 official website',
+      status: '',
+      description: 'led technical team to design and develop the official tedxgprec website, building interactive sections for speakers, theme reveal, and event flow while ensuring a responsive and visually engaging experience.',
+      tech: 'html • css • js',
+      github: '',
+      live: 'https://tedxgprec.in/'
+    },
+    {
+      id: 'pomodoro',
+      title: 'pomodoro productivity app',
+      status: '',
+      description: 'a customizable pomodoro timer with session tracking, break cycles, and notification sounds, combined with a task manager that organizes tasks by category with drag-and-drop support.',
+      tech: 'react • localstorage',
+      github: 'https://github.com/faizaanjum7/pomodoro-app',
+      live: 'https://pomodoroapp-by-faiza.vercel.app/'
+    },
+    {
+      id: 'vibe-coded',
+      title: 'skylar productivity app',
+      status: '',
+      description: 'a productivity app built using prompt-based development with google ai studio. explored how ai-assisted coding can accelerate development while implementing my own product idea.',
+      tech: 'ai tools • prompts • web',
+      github: 'https://github.com/faizaanjum7/productivityApp',
+      live: 'https://skylarfocus-app.vercel.app/'
+    },
+    {
+      id: 'professional-portfolio',
+      title: 'professional portfolio',
+      status: 'in progress',
+      description: 'a minimal, notion-inspired portfolio focused on structured content, clarity, and professional presentation. currently under development.',
+      tech: 'react • ui design',
+      github: 'https://github.com/faizaanjum7/Faiza_Anjum',
+      live: ''
+    },
+    {
+      id: 'job-application',
+      title: 'job application form',
+      status: '',
+      description: 'a responsive application form with input validation, file uploads, and interactive elements built using html, css, and javascript.',
+      tech: 'html • css • javascript',
+      github: 'https://github.com/faizaanjum7/applicationform',
+      live: 'https://faizaanjum7.github.io/applicationform/'
+    },
+    {
+      id: 'resume-website',
+      title: 'resume website',
+      status: '',
+      description: 'a simple static resume website built using html and css to practice layout structuring and clean information presentation.',
+      tech: 'html • css',
+      github: 'https://github.com/faizaanjum7/resume',
+      live: 'https://faizaanjum7.github.io/resume/'
+    }
+  ];
+
   const renderTabContent = () => {
-    switch(activeTab) {
+    switch (activeTab) {
       case 'about':
         return (
           <div className="window-body">
@@ -91,7 +175,7 @@ function App() {
             </div>
           </div>
         );
-        case 'interests':
+      case 'interests':
         return (
           <div className="window-body">
             <h2>other interests</h2>
@@ -116,7 +200,7 @@ function App() {
           </div>
         );
 
-        case 'gallery':
+      case 'gallery':
         return (
           <div className="window-body">
             <h2>photo gallery</h2>
@@ -129,14 +213,29 @@ function App() {
           </div>
         );
 
-        case 'portfolio':
+      case 'portfolio':
         return (
           <div className="window-body">
             <h2>my projects</h2>
+            <div className="portfolio-grid">
+              {projectsData.map((project) => (
+                <div key={project.id} className="project-card" onClick={(e) => openTab(e, project.id)}>
+                  <div className="project-card-header">
+                    <h3>{project.title}</h3>
+                    {project.status && <span className="tag">{project.status}</span>}
+                  </div>
+                  <p className="project-short-desc">{project.description}</p>
+                  <div className="project-card-footer">
+                    <p className="tech-stack">{project.tech}</p>
+                    <img src={pearl} alt="View project" className="project-preview-icon" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         );
 
-        case 'contact':
+      case 'contact':
         return (
           <div className="window-body">
             <h2>contact</h2>
@@ -149,11 +248,34 @@ function App() {
           </div>
         );
       default:
+        const activeProject = projectsData.find(p => p.id === activeTab);
+        if (activeProject) {
+          return (
+            <div className="window-body project-detail-view">
+              <button className="back-btn" onClick={(e) => openTab(e, 'portfolio')}>
+                ← back to portfolio
+              </button>
+              <h2>{activeProject.title} {activeProject.status && <span className="tag">{activeProject.status}</span>}</h2>
+              <div className="project-detail-content">
+                <p className="project-desc">{activeProject.description}</p>
+                <div className="tech-badge-container">
+                  {activeProject.tech.split(' • ').map(t => (
+                    <span key={t} className="tech-badge">{t}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  {activeProject.github && <a href={activeProject.github} target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>github repository ↗</a>}
+                  {activeProject.live && <a href={activeProject.live} target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>live demo ↗</a>}
+                </div>
+              </div>
+            </div>
+          );
+        }
         return null;
     }
   };
   return (
-    <div className={`ocean ${isDarkMode ? 'dark': 'light'}`}>
+    <div className={`ocean ${isDarkMode ? 'dark' : 'light'}`}>
 
       <button className="theme-toggle" onClick={toggleTheme}>
         <img
@@ -165,22 +287,22 @@ function App() {
 
       <div className="content-wrapper">
         <div className="profile-container">
-        <img src={me} alt="myimage" className="profile-img"/>
+          <img src={me} alt="myimage" className="profile-img" />
         </div>
-      <div className="about-section">
-        <img src={pearl} alt="pearl" className="floating-pearl pearl1"></img>
-        <img src={pearl} alt="pearl" className="floating-pearl pearl2"></img>
-        <img src={pearl} alt="pearl" className="floating-pearl pearl3"></img>
+        <div className="about-section">
+          <img src={pearl} alt="pearl" className="floating-pearl pearl1"></img>
+          <img src={pearl} alt="pearl" className="floating-pearl pearl2"></img>
+          <img src={pearl} alt="pearl" className="floating-pearl pearl3"></img>
 
-        <h1>hi, i'm faiza!</h1>
-        <p>a final year computer science student, full stack intern, music lover ♬⋆.˚</p>
+          <h1>hi, i'm faiza!</h1>
+          <p>a final year computer science student, full stack intern, music lover ♬⋆.˚</p>
 
-        <div className="nav-links">
-          <a href="#about" className="nav-link" onClick={(e) => openTab(e,'about')}>
-            <img src={shell2} alt="about" className="nav-icon" /> about
-          </a>
+          <div className="nav-links">
+            <a href="#about" className="nav-link" onClick={(e) => openTab(e, 'about')}>
+              <img src={shell2} alt="about" className="nav-icon" /> about
+            </a>
 
-          <a href="#interests" className="nav-link" onClick={(e) => openTab(e, 'interests')}>
+            <a href="#interests" className="nav-link" onClick={(e) => openTab(e, 'interests')}>
               <img src={starfish} alt="interests" className="nav-icon" /> interests
             </a>
 
@@ -191,8 +313,8 @@ function App() {
             <a href="#contact" className="nav-link" onClick={(e) => openTab(e, 'contact')}>
               <img src={crescentMoon} alt="contact" className="nav-icon" /> contact
             </a>
+          </div>
         </div>
-      </div>
       </div>
 
       <footer className="footer">
@@ -200,7 +322,7 @@ function App() {
           <a href="https://github.com/faizaanjum7" target="_blank" rel="noopener noreferrer">
             <img src={githubIcon} alt="GitHub" className="footer-icon" />
           </a>
-           <a href="mailto:faizaanjumm07@gmail.com"onClick={() => window.open("https://mail.google.com/mail/?view=cm&to=faizaanjumm07@gmail.com", "_blank")}>
+          <a href="mailto:faizaanjumm07@gmail.com" onClick={() => window.open("https://mail.google.com/mail/?view=cm&to=faizaanjumm07@gmail.com", "_blank")}>
             <img src={emailIcon} alt="Email" className="footer-icon" />
           </a>
           <a href="https://www.linkedin.com/in/m-s-faiza-anjum-b7b251264/" target="_blank" rel="noopener noreferrer">
@@ -211,9 +333,9 @@ function App() {
       </footer>
 
       <a href={faiza_anjum} target="_blank" rel="noopener noreferrer" className="resume-bubble" onClick={handleResumeClick}><span>resume</span></a>
-      
 
-        <Wave
+
+      <Wave
         className="wave wave1"
         fill={isDarkMode ? "#1d2b45" : "#4fa3d1"}
         paused={false}
