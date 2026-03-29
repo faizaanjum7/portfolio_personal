@@ -3,7 +3,7 @@ body,
 #root {
   height: 100%;
   margin: 0;
-  cursor: url('/portfolio/src/assets/starfish_cursor.png') 16 16, auto;
+  cursor: url('/starfish_cursor.png') 16 16, auto;
 }
 
 .ocean {
@@ -107,7 +107,6 @@ body,
   font-weight: 500;
   transition: transform 0.3s ease, color 0.3s ease;
   width: fit-content;
-  cursor: url('./assets/image.png') 16 16, pointer;
 }
 
 .nav-link:hover {
