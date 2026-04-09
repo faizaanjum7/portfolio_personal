@@ -74,6 +74,15 @@ function App() {
       live: 'https://faiza-anjum-portfolio.vercel.app/'
     },
     {
+      id: 'professional-portfolio',
+      title: 'professional portfolio',
+      status: 'in progress',
+      description: 'a minimal, notion-inspired portfolio focused on structured content, clarity, and professional presentation. currently under development.',
+      tech: 'react • ui design',
+      github: 'https://github.com/faizaanjum7/Faiza_Anjum',
+      live: 'faiza-anjum.vercel.app'
+    },
+    {
       id: 'shms',
       title: 'smart hospital management system',
       status: 'in progress',
@@ -117,15 +126,6 @@ function App() {
       tech: 'ai tools • prompts • web',
       github: 'https://github.com/faizaanjum7/productivityApp',
       live: 'https://skylarfocus-app.vercel.app/'
-    },
-    {
-      id: 'professional-portfolio',
-      title: 'professional portfolio',
-      status: 'in progress',
-      description: 'a minimal, notion-inspired portfolio focused on structured content, clarity, and professional presentation. currently under development.',
-      tech: 'react • ui design',
-      github: 'https://github.com/faizaanjum7/Faiza_Anjum',
-      live: ''
     },
     {
       id: 'job-application',
