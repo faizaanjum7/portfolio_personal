@@ -76,7 +76,7 @@ function App() {
     {
       id: 'professional-portfolio',
       title: 'professional portfolio',
-      status: 'in progress',
+      status: '',
       description: 'a minimal, notion-inspired portfolio focused on structured content, clarity, and professional presentation. currently under development.',
       tech: 'react • ui design',
       github: 'https://github.com/faizaanjum7/Faiza_Anjum',
