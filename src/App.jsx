@@ -80,7 +80,7 @@ function App() {
       description: 'a minimal, notion-inspired portfolio focused on structured content, clarity, and professional presentation. currently under development.',
       tech: 'react • ui design',
       github: 'https://github.com/faizaanjum7/Faiza_Anjum',
-      live: 'faiza-anjum.vercel.app'
+      live: 'https://faiza-anjum.vercel.app'
     },
     {
       id: 'shms',
