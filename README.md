@@ -1,18 +1,43 @@
-# React + Vite
+# 🌊 underwater portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+a creative personal portfolio designed as an interactive underwater experience, combining animations, sound, and playful ui.
 
-Currently, two official plugins are available:
+## ✨ technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- react.js  
+- css3  
+- javascript  
+- [react wavify](https://www.npmjs.com/package/react-wavify)
 
-## React Compiler
+## 🚀 features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- day/night mode toggle with sound effects  
+- animated wave background  
+- floating ui elements and micro-interactions  
+- window-based navigation system  
+- responsive design  
 
-Note: This will impact Vite dev & build performances.
+## 🎞️ preview
 
-## Expanding the ESLint configuration
+![preview](./preview.gif)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📍 the process
+
+when i was exploring different portfolios for inspiration i found this really helpful video made by [shar](https://www.youtube.com/watch?v=_tWh4cYCTv0&t=694s). i too wanted to build something that didn’t feel like a traditional portfolio. most portfolios are structured and predictable, so i experimented with a more immersive and expressive design. 
+
+i liked the react-wavify component showed in the video, and when i was trying to design the basic layout of portfolio i decided to go with the underwater theme because it felt calm. i focused on small details like floating elements, subtle animations, and sound feedback to make the experience feel alive.
+
+this project became more about exploring how ui and interaction design can shape user experience rather than just displaying information.
+
+## 📚 what i learned
+
+- designing interactive ui beyond standard layouts  
+- managing component state for dynamic ui  
+- enhancing ux using sound and animation  
+- building visually cohesive themes  
+
+## ⚠️ usage
+
+this project is for personal portfolio use only.
+
+you may use it as inspiration but, please do not copy or reuse the design/code without permission.
