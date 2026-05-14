@@ -33,7 +33,7 @@ export const projectsData = [
       description: 'a modern learning management system designed in figma and developed into a functional web app. focused on clean ui, structured learning flows, and real-world usability.',
       tech: 'react • figma • ai tools',
       github: 'https://github.com/faizaanjum7/Next-Gen-LMS',
-      live: 'https://lms-app-latest.vercel.app/'
+      live: 'https://nextgen-lms-app-latest.vercel.app/'
     },
     {
       id: 'tedxgprec-2025',
